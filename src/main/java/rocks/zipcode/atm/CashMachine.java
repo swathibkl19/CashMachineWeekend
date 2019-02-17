@@ -59,7 +59,7 @@ public class CashMachine {
     }
 
     private <T> void tryCall(Supplier<ActionResult<T> > action, Consumer<T> postAction) {
-        try {
+       // try {
             ActionResult<T> result = action.get();
             if (result.isSuccess()) {
                 T data = result.getData();
@@ -68,8 +68,9 @@ public class CashMachine {
                 String errorMessage = result.getErrorMessage();
                 throw new RuntimeException(errorMessage);
             }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+     //  }
+ //       catch (Exception e) {
+//            System.out.println("Error: " + e.getMessage());
+//        }
     }
 }
